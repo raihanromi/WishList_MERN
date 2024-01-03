@@ -1,6 +1,31 @@
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
+import {backend_url} from "../App"
 
-const Product = ({ product }) => {
+const Product = ({ product, getProducts }) => {
+  const deleteProduct = async (id) => {
+    const result = await Swal.fire({
+      title: "Do you want to delete the product?",
+      showCancelButton: true,
+      icon: "warning",
+      confirmButtonColor: "#5cb85c",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    });
+
+    if (result.isConfirmed) {
+      try {
+        await axios.delete(`${backend_url}/products/${id}`);
+        toast.success("Deleted the product");
+        getProducts();
+      } catch (error) {
+        toast.error(error.message);
+      }
+    }
+  };
+
   return (
     <div className="bg-white rounded shadow-lg overflow-hidden">
       <img src={product.image} className="w-full h-28 object-cover" />
@@ -16,12 +41,12 @@ const Product = ({ product }) => {
           >
             Edit
           </Link>
-          <Link
-            to="/"
-            className="inline-block w-full text-center shadow-md bg-red-700 text-white rounded-sm px-4 py-1 font-bold hover:bg-red-600 hover:cursor-pointer"
+          <button
+            onClick={() => deleteProduct(product._id)}
+            className="inline-block w-full text-center shadow-md bg-red-700 text-white rounded-sm px-4 py-1 font-bold hover:bg-red-500 hover:cursor-pointer"
           >
             Delete
-          </Link>
+          </button>
         </div>
       </div>
     </div>
