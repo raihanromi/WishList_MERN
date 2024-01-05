@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { backend_url } from "../App";
+
 
 const CreatePage = () => {
   const [name, setName] = useState("");
@@ -15,22 +17,23 @@ const CreatePage = () => {
     e.preventDefault();
     if (name === "" || quantity === "" || price === "" || image === "") {
       alert("fill up all the input filed");
-    
     }
     try {
       setIsLoading(true);
-      const response = await axios.post("http://localhost:3000/products/addproduct", {
-        name: name,
-        quantity: quantity,
-        price: price,
-        image: image,
-      });
-      toast.success(`Save ${response.data.name}`)
+      const response = await axios.post(
+        `${backend_url}/products/addproduct`,
+        {
+          name: name,
+          quantity: quantity,
+          price: price,
+          image: image,
+        }
+      );
+      toast.success(`Save ${response.data.name}`);
       setIsLoading(false);
       navigate("/");
-
     } catch (error) {
-      toast.error(error)
+      toast.error(error);
       setIsLoading(false);
     }
   };
@@ -38,7 +41,7 @@ const CreatePage = () => {
   return (
     <div className="max-w-lg bg-white shadow-lg mx-auto p-7 rounded mt-6">
       <h2 className="font-semibold text-2xl mb-4 block text-center">
-        Create Product
+        WishList a Product
       </h2>
       <form onSubmit={saveProduct}>
         <div className="space-y-2">

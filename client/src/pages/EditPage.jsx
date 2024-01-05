@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import { backend_url } from "../App";
 
 
 const EditPage = () => {
@@ -19,7 +19,7 @@ const EditPage = () => {
   const getProduct = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get(`http://localhost:3000/products/${id}`);
+      const response = await axios.get(`${backend_url}/products/${id}`);
 
       setProduct({
         name: response.data.name,
@@ -43,7 +43,7 @@ const EditPage = () => {
     setIsLoading(true);
     try {
       const response = await axios.put(
-        `http://localhost:3000/products/${id}`,
+        `${backend_url}/products/${id}`,
         product
       );
       toast.success("Updated the product");
