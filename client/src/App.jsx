@@ -29,9 +29,11 @@ const App = () => {
           <Route index element={<HomePage />}></Route>
           <Route path="/create" element={<CreatePage />}></Route>
           <Route path="/edit/:id" element={<EditPage />}></Route>
-          <Route path="/signup" element={<SignupPage/>}></Route>
         </Routes>
       </div>
+      <Routes>
+        <Route path="/signup" element={<SignupPage/>}></Route>
+        </Routes>
       <ToastContainer />
     </div>
   );
