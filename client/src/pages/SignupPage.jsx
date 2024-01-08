@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SignupPage = () => {
+
+  const [name,setName] =useState("")
+  const [email,setEmail] =useState("")
+  const [password,setPassword] =useState("")
+
   return (
     <div className="max-w-lg bg-white shadow-lg mx-auto p-7 rounded mt-6">
       <h2 className="font-semibold text-2xl mb-4 block text-center">
@@ -12,7 +17,8 @@ const SignupPage = () => {
             <label>Name</label>
             <input
               type="text"
-              value=""
+              value={name}
+              onChange={(e)=>setName(e.target.value)}
               className="w-full block border p-3 text-gray-600 rounded focus: shadow-outline focus:border-blue-200 placeholder-gray-400 "
               placeholder="Enter Name"
             />
@@ -21,18 +27,20 @@ const SignupPage = () => {
             <label>Email</label>
             <input
               type="text"
-              value=""
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
               className="w-full block border p-3 text-gray-600 rounded focus: shadow-outline focus:border-blue-200 placeholder-gray-400 "
-              placeholder="Enter Quantity"
+              placeholder="Enter Email"
             />
           </div>
           <div>
             <label>Password</label>
             <input
-              type="text"
-              value=""
+              type="password"
+              value={password}
+              onChange={(e)=>setPassword(e.target.value)}
               className="w-full block border p-3 text-gray-600 rounded focus: shadow-outline focus:border-blue-200 placeholder-gray-400 "
-              placeholder="Enter Price"
+              placeholder="Enter Password"
             />
           </div>
           <div>
