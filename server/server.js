@@ -22,7 +22,7 @@ app.use(errorMiddle);
 
 //routes
 app.use("/products", productRoute);
-//app.use("/user", userRoute);
+app.use("/user", userRoute);
 
 //DB connection and server opening
 mongooes
