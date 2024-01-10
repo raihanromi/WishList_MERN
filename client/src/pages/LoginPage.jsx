@@ -1,17 +1,33 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { backend_url } from "../App";
 
 const LoginPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const checkLogin = async (e) => {
+    e.preventDefault();
+    const response = await axios.post(`${backend_url}/user/checkuser`, {
+      email: email,
+      password: password,
+    });
+
+    console.log(response);
+  };
+
   return (
     <div className="max-w-lg bg-white shadow-lg mx-auto p-7 rounded mt-6">
       <h2 className="font-semibold text-2xl mb-4 block text-center">Log in</h2>
-      <form>
+
+      <form onSubmit={checkLogin}>
         <div className="space-y-2">
           <div>
             <label>Email</label>
             <input
               type="text"
-              value=""
-              //onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full block border p-3 text-gray-600 rounded focus: shadow-outline focus:border-blue-200 placeholder-gray-400 "
               placeholder="Enter Email"
             />
@@ -20,8 +36,8 @@ const LoginPage = () => {
             <label>Password</label>
             <input
               type="password"
-              value=""
-              //onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full block border p-3 text-gray-600 rounded focus: shadow-outline focus:border-blue-200 placeholder-gray-400 "
               placeholder="Enter Password"
             />
