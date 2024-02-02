@@ -15,10 +15,10 @@ const App = () => {
       <nav className="bg-gray-800">
         <div className="flex gap-10 mx-auto p-2">
           <Link to="/">
-            <h2 className="text-white text-2xl font-bold">React Crud</h2>
+            <h2 className="text-white text-2xl font-bold">My WishList</h2>
           </Link>
           <Link to="/create">
-            <h2 className="text-white text-2xl font-bold">Create Product</h2>
+            <h2 className="text-white text-2xl font-bold">Add to the WishList</h2>
           </Link>
           <Link to="/signup">
             <h2 className="text-white text-2xl font-bold">Sign up </h2>
