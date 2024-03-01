@@ -6,12 +6,10 @@ const userRoute = require("./routes/userRoute");
 const errorMiddle = require("./middleware/errorMiddleware");
 const cors = require("cors");
 
-//allowing all ip to access this server 
-//TODO: config so that only your fn can access the api
-app.use(cors(process.env.FrontEnd));
+
+app.use(cors());
 app.use(express.json());
 require("dotenv").config();
-
 
 //first end point
 app.get("/", (req, res) => {

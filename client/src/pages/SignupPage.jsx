@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import axios from "axios";
 import { backend_url } from "../App";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +19,7 @@ const SignupPage = () => {
     });
     console.log(response);
     toast.success(`${response.data.name} is a new user`);
-    navigate("/login")
+    navigate("/login");
   };
 
   return (
