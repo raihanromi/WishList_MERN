@@ -1,4 +1,4 @@
-## EID WISHLIST
+## WISHLIST
 Welcome to the Project Wishlist repository! This is a simple web application where users can add their wish items to a shared list. Whether it's a book, a gadget, or anything else you desire, feel free to add it to the wishlist!
 
 # How to Use
@@ -28,3 +28,22 @@ This project is built using the following technologies:
 * Node.js
 * Express.js
 * MongoDB
+
+# Getting Started
+To get started with this project, follow these steps:
+
+1. Clone the Repository:
+* `git clone https://github.com/raihanromi/WishList_MERN.git`
+
+2. Install Dependencies:
+* `npm install`
+
+3. Set Up MongoDB:
+* Make sure you have MongoDB installed and running on your machine.
+* Update the MongoDB URI in the `.env` file with your database connection string.
+
+4. Run the Application:
+* `npm run dev`
+
+5. View the Application:
+* Open your web browser and navigate to ` http://localhost:3000` to view the project wishlist.
