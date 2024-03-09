@@ -1,7 +1,7 @@
-## WISHLIST
+# WISHLIST
 Welcome to the Wishlist repository! This is a simple web application where users can add their wish items. Whether it's a book, a gadget, or anything else you desire, feel free to add it to the wishlist!
 
-# How to Use
+## How to Use
 
 1. Viewing Wishlist:
 * You can browse the wishlist to see what others have wished for.
@@ -17,7 +17,7 @@ Welcome to the Wishlist repository! This is a simple web application where users
 * Click on the "Remove" button next to your wish item to delete it from the list.
 
 
-# Technologies Used 
+## Technologies Used 
 This project is built using the following technologies:
 
 * HTML
@@ -26,13 +26,13 @@ This project is built using the following technologies:
 * Express.js
 * MongoDB
 
-# Getting Started
+## Getting Started
 To get started with this project, follow these steps:
 
 1. Clone the Repository:
 * `git clone https://github.com/raihanromi/WishList_MERN.git`
 
-# Start The Server:
+## Start The Server:
 Open terminal from  main project folder and to the the server folder using `cd .\server`
 
 1. Install Dependencies in the terminal using - `npm install`
@@ -46,7 +46,7 @@ Open terminal from  main project folder and to the the server folder using `cd .
 
 4. Run the Server using - `npm run dev`
 
-# Start the Application:
+## Start the Application:
 Open another terminal from the main project folder and to the the server folder using `cd .\client`
 
 1. Install Dependencies in the terminal using - `npm install`
