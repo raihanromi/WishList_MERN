@@ -25,7 +25,7 @@ This project is built using the following technologies:
 
 * HTML
 * Tailwind
-* Node.js
+* React
 * Express.js
 * MongoDB
 
