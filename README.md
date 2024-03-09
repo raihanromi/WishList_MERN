@@ -1,5 +1,5 @@
 ## WISHLIST
-Welcome to the Project Wishlist repository! This is a simple web application where users can add their wish items to a shared list. Whether it's a book, a gadget, or anything else you desire, feel free to add it to the wishlist!
+Welcome to the Wishlist repository! This is a simple web application where users can add their wish items. Whether it's a book, a gadget, or anything else you desire, feel free to add it to the wishlist!
 
 # How to Use
 
@@ -15,9 +15,6 @@ Welcome to the Project Wishlist repository! This is a simple web application whe
 3. Removing from Wishlist:
 * If you change your mind or your wish has been fulfilled, you can remove it from the wishlist.
 * Click on the "Remove" button next to your wish item to delete it from the list.
-
-4. Sharing:
-* You can share this project with your friends and family so they can also add their wishes to the list.
 
 
 # Technologies Used 
