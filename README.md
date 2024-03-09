@@ -35,15 +35,24 @@ To get started with this project, follow these steps:
 1. Clone the Repository:
 * `git clone https://github.com/raihanromi/WishList_MERN.git`
 
-2. Install Dependencies:
-* `npm install`
+# Start The Server:
+Open terminal from  main project folder and to the the server folder using `cd .\server`
 
-3. Set Up MongoDB:
-* Make sure you have MongoDB installed and running on your machine.
+1. Install Dependencies in the terminal using - `npm install`
+
+2. Set Up MongoDB:
+* Make sure you have MongoDB installed and running on your machine OR you can use the cloud mongodb server for the database.
+
+3. Set up .env File:
 * Update the MongoDB URI in the `.env` file with your database connection string.
+* Give your desired PORT Number
 
-4. Run the Application:
-* `npm run dev`
+4. Run the Server using - `npm run dev`
 
-5. View the Application:
-* Open your web browser and navigate to ` http://localhost:3000` to view the project wishlist.
+# Start the Application:
+Open another terminal from the main project folder and to the the server folder using `cd .\client`
+
+1. Install Dependencies in the terminal using - `npm install`
+
+2. View the Application:
+* Give command to the terminal - `npm run dev` 
