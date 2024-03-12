@@ -1,10 +1,13 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { backend_url } from "../App";
+import { AuthContext } from "../context/authContext";
+import { redirect } from "react-router-dom";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { dispatch, user } = useContext(AuthContext);
 
   const checkLogin = async (e) => {
     e.preventDefault();
@@ -12,7 +15,9 @@ const LoginPage = () => {
       email: email,
       password: password,
     });
-    console.log(response.data);
+    dispatch({type:"LOGIN_SUCCESS", payload:response.data})
+    console.log(user);
+    //console.log(response.data)
   };
 
   return (

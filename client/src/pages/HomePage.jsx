@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import Product from "../components/Product";
 import { backend_url } from "../App";
+import { AuthContext } from "../context/authContext";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const { user } = useContext(AuthContext);
 
   const getProducts = async () => {
     try {
@@ -18,6 +21,7 @@ const HomePage = () => {
     }
   };
   useEffect(() => {
+    console.log(user);
     getProducts();
   }, []);
 

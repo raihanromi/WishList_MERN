@@ -3,6 +3,7 @@ const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 
 
+
 //save new user in the DB
 const newUser = async (req, res) => {
   const salt = await bcrypt.genSalt(10);
