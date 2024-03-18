@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div>
-      {/* <nav className="bg-gray-800">
+      <nav className="bg-gray-800">
         <div className="flex gap-10 mx-auto p-2">
           <Link to="/">
             <h2 className="text-white text-2xl font-bold">My WishList</h2>
@@ -35,7 +35,7 @@ const App = () => {
             <h2 className="text-white text-2xl font-bold">Log in </h2>
           </Link>
         </div>
-      </nav> */}
+      </nav>
       <div className="container mx-auto p-2 h-full">
         <Routes>
           <Route index element={ user? <HomePage />: <Navigate to="/login"/> }></Route>

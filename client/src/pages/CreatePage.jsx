@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { backend_url } from "../App";
+import { AuthContext } from "../context/authContext";
 
 
 const CreatePage = () => {
@@ -12,6 +13,8 @@ const CreatePage = () => {
   const [image, setImage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
+  const {user} = useContext(AuthContext)
 
   const saveProduct = async (e) => {
     e.preventDefault();
@@ -27,6 +30,7 @@ const CreatePage = () => {
           quantity: quantity,
           price: price,
           image: image,
+          userId:user._id
         }
       );
       toast.success(`Save ${response.data.name}`);

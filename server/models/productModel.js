@@ -18,6 +18,10 @@ const productSchema = mongooes.Schema({
     type: String,
     required: false,
   },
+  userId: {
+    type: String,
+    required: true,
+  },
 });
 
 const Product = mongooes.model("Product", productSchema);

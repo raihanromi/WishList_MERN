@@ -16,8 +16,6 @@ const LoginPage = () => {
       password: password,
     });
     dispatch({type:"LOGIN_SUCCESS", payload:response.data})
-    console.log(user);
-    //console.log(response.data)
   };
 
   return (

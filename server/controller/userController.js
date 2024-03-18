@@ -2,8 +2,6 @@
 const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 
-
-
 //save new user in the DB
 const newUser = async (req, res) => {
   const salt = await bcrypt.genSalt(10);
@@ -21,26 +19,23 @@ const newUser = async (req, res) => {
   }
 };
 
-
 //verify user login
 const checkUser = async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-  const verifyuser = await User.findOne({ email });
-  if (verifyuser) {
-    const validPassword = await bcrypt.compare(password, verifyuser.password);
-    if (validPassword) {
-      const {password,...other} = verifyuser._doc
-      res.status(200).json(other)
-    } else {
-      console.log("wrong password");
-      res.send("wrong password");
+  try {
+    const verifyuser = await User.findOne({ email });
+    if (verifyuser) {
+      const validPassword = await bcrypt.compare(password, verifyuser.password);
+      if (validPassword) {
+        const { password, __v, ...other } = verifyuser._doc;
+        res.status(200).json(other);
+      }
     }
-  } else {
-    res.send("not a user ");
+  } catch (error) {
+    console.log(error);
   }
 };
-
 
 //get all user from the DB
 const allUser = async (req, res) => {
