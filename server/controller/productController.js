@@ -1,10 +1,10 @@
 const Product = require("../models/productModel");
 const asyncHandler = require("express-async-handler");
 
-//get all the product
+//get user all the wishlist product
 const allProduct = asyncHandler(async (req, res) => {
   try {
-    const products = await Product.find({});
+    const products = await Product.find({userId:req.body.userId});
     res.status(200).json(products);
   } catch (error) {
     res.status(500);

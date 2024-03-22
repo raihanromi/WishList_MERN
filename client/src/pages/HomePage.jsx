@@ -13,7 +13,7 @@ const HomePage = () => {
   const getProducts = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get(`${backend_url}/products/`);
+      const response = await axios.post(`${backend_url}/products/`,{userId:user._id});
       setProducts(response.data);
       setIsLoading(false);
     } catch (error) {

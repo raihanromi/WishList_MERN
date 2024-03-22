@@ -9,7 +9,7 @@ const {
 } = require("../controller/productController");
 
 //get all the product
-router.get("/", allProduct);
+router.post("/", allProduct);
 
 //get a specific product
 router.get("/:id", oneProduct);
